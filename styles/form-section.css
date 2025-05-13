@@ -37,3 +37,20 @@
 }
 
 
+@media (width <= 80em){
+ .form-section{
+  margin-top: 2.5rem;
+  width: 20.125rem;
+  .active{
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: start;
+  }
+  .questions{
+    gap: .8rem;
+    div{
+      margin-top: 3px;
+    }
+  }
+ }
+}
