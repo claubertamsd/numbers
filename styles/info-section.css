@@ -1,0 +1,24 @@
+
+.info-section{
+  & header{
+    h2{
+      font: var(--overline) ; 
+      text-transform: uppercase;
+    }    
+  }
+
+  .questions{
+    width: 25rem;
+    margin-top: 2.25rem;
+    gap: .5rem;
+    display: flex;
+    align-items: flex-start;
+
+    & div{
+      margin-top: 3px;
+    }
+  }
+}
+
+
+

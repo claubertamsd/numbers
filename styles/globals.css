@@ -1,0 +1,118 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --content-primary: #ffffff;
+  --content-secondary: #C7C9CC;
+  --content-tertiary:#D9D9D9;
+  --content-brand: #C58DE7;
+  --color-inverse: #030203;
+
+  --background-primary: #020202;
+  --background-secondary: #111012;
+  --background-tertiary: #24222E;
+  --background-brand: #C58DE7;
+  --background-gray: #3D3D3D;
+
+  --accent-pink:#D586E0;
+  --accent-blue:#91A1FA;
+  --accent-green: #77C0AF;
+  --accent-line: #D1DC97;
+  --accent-red: #E9A9B3;
+
+  --gradient-border: var(--accent-green) 0%, var(--accent-line) 14.84%, var(--accent-red) 32.15%, var(--accent-pink) 65.79%, var(--accent-blue) 84.58%;
+  --gradient-background: var(--accent-pink) 0%, var(--accent-blue) 98.93%;
+  --gradient-content: var(--content-secondary) 0%, var(--background-gray) 100%;
+
+  --font-sora: "Sora", sans-serif;
+  --dp-lg: 800 4.5rem/1.3 var(--font-sora);
+  --dp-md: 800 2.5rem/1.3 var(--font-sora);
+  --dp-sm: 700 2rem/1.3 var(--font-sora);
+
+  --font-mono: "Roboto Mono", monospace;
+  --overline: 700 1rem/1.5 var(--font-mono);
+
+  --font-flex: "Roboto Flex", sans-serif;
+  --p-lg: 500 1rem/1.5 var(--font-flex);
+  --p-md: 500 0.875rem/1.5 var(--font-flex);
+  --p-sm: 500 .75rem/1.5 var(--font-flex);
+  --lb-md: 500 1.25rem/1.5 var(--font-flex);
+  --lb-sm: 500 1rem/1.5 var(--font-flex);
+}
+
+body{
+  background-color: var(--background-primary);
+}
+.bg{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: url(/assets/Background.png);
+}
+
+.container{
+  margin-inline: auto;
+  margin-top: 4.5rem;
+  width: 70em;
+}
+
+h1{
+  color: var(--content-primary);
+  font: var(--dp-lg);
+  text-transform: uppercase;
+}
+
+h2{
+  color: var(--content-primary);
+  font: var(--lb-md);
+}
+
+span{
+  color: var(--content-brand);
+  font: var(--p-md);
+}
+
+p{
+  color: var(--content-secondary);
+  font: var(--p-sm);
+}
+
+button{
+  cursor: pointer;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 8px;
+
+  width: 100%;
+  height: 3.5rem;
+
+  background-color: var(--background-tertiary);
+  border-radius: .5rem;
+
+  font: var(--lb-md);
+  color: var(--content-primary);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.flex{
+  display: flex;
+}
+
+.sp-btw{
+  justify-content: space-between;
+}
+.mg-top{
+  margin-top: 3.5rem;
+}

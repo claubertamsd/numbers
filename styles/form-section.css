@@ -1,0 +1,39 @@
+.form-section {
+  width: 30.125rem;
+
+  form{
+    .btn{
+      margin-top: 2.5rem;
+    }
+  }
+
+  & .wrapper {
+    display: flex;
+    gap: .875rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    & .input-wrapper {
+      display: grid;
+      text-align: center;
+
+      label{
+        color: var(--content-primary);
+        font: var(--lb-sm);
+        text-transform: uppercase;
+      }
+      & input {
+        background: var(--background-secondary);
+        border: 1px solid #111012;
+        border-radius: 8px;
+        text-align: center;
+        height: 3.5rem;
+        width: 5.375rem;
+
+        color: var(--content-primary);
+        font: var(--dp-sm);
+      }
+    }
+  }
+}
+
+
