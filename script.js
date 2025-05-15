@@ -48,10 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return result;
     }
   };
-
-
-
- 
+    const clearResults = () => {
+    numberWrapper.innerHTML = "";
+  };
 
   // Exibe os números gerados na tela com animação
   const displayResults = (numbers) => {
@@ -78,7 +77,22 @@ document.addEventListener("DOMContentLoaded", () => {
     return true;
   };
 
-   let totalDraw = 0;
+  let totalDraw = 0;
+
+  numberInput.oninput = () => {
+    const regex = /\D/g;
+    numberInput.value = numberInput.value.replace(regex, "");
+  };
+
+    minInput.oninput = () => {
+    const regex = /\D/g;
+    minInput.value = minInput.value.replace(regex, "");
+  };
+
+    maxInput.oninput = () => {
+    const regex = /\D/g;
+    maxInput.value = maxInput.value.replace(regex, "");
+  };
 
   // Evento submit do formulário
   form.addEventListener("submit", (e) => {
@@ -98,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const numbers = generateRandomNumbers(quantity, min, max, noRepeat);
       displayResults(numbers);
       totalDraw++;
-      qtdResult.textContent = `${totalSorteios}º sorteio`;
+      qtdResult.textContent = `${totalDraw}º sorteio`;
 
       formSection.classList.add("disable");
       resultSection.classList.remove("disable");
