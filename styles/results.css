@@ -1,0 +1,103 @@
+.results{
+  width:30.125rem;
+  text-align: center;
+
+  & .number-results{
+    height: 15rem;
+  }
+}
+
+.number-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.box {
+  width: 6.25rem;
+  height: 5.25rem;
+  background: var(--background-brand);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center;
+  position: relative;
+  opacity: 0;
+  animation: boxAnim 2.5s forwards;
+  
+}
+
+.box:nth-child(1) { animation-delay: 0s; }
+.box:nth-child(2) { animation-delay: 2.5s; }
+
+@keyframes boxAnim {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    background-color: var(--background-brand);
+  }
+  10% {
+    transform: scale(1.1) rotate(0deg);
+  }
+  70% {
+    transform: scale(1.1) rotate(360deg);
+  }
+  90% {
+    background-color: var(--background-brand);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    background-color: transparent;
+    opacity: 1;
+  }
+}
+
+.number {
+  font: var(--number);
+  opacity: 1;
+  position: absolute;
+  color: var(--content-inverse);
+  transform: rotate(0deg);
+  animation: numberCounterRotation 2.5s forwards, colorChange 0.3s forwards;
+}
+
+.box:nth-child(1) .number {
+  animation-delay: 0s, 2.2s;
+}
+.box:nth-child(2) .number {
+  animation-delay: 2.5s, 4.7s;
+}
+
+
+@keyframes numberCounterRotation {
+
+  to {
+    transform: rotate(-360deg); 
+  }
+}
+
+@keyframes showNumber {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes colorChange {
+  to {
+    color: var(--content-brand); 
+  }
+}
+
+
+@media(width <= 80em){
+  .results{
+    
+    width: 20.125rem;
+    margin-top: 2.5rem;
+  }
+}

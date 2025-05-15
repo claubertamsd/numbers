@@ -57,14 +57,14 @@
             </div>
           </section>
 
-          <section class="form-section">
+          <section class="form-section ">
             <h2>Quero sortear:</h2>
             <p>
               defina o intervalo e a quantidade de números, clique em "Sortear"
               e veja os resultados na tela. É rápido e fácil!
             </p>
-          <form action="">
-            <div class="wrapper">     
+            <form action="">
+              <div class="wrapper">
                 <div class="input-wrapper">
                   <label for="number">Números</label>
                   <input type="number" id="number" />
@@ -77,24 +77,23 @@
 
                 <div class="input-wrapper">
                   <label for="hasta">Até</label>
-                  <input type="number" id="hasta" max="100"/>
+                  <input type="number" id="hasta" max="100" />
                 </div>
-
               </div>
 
               <div class="toggle-container">
-                    <label class="toggle">
-                      <input type="checkbox" id="themeToggle" />
-                      <span class="slider"></span>
-                    </label>
-                    <p>Não repetir número</p>
-                  </div>
-              
-              <button class="btn">
-                Sortear <img src="assets/arrow.svg" />
-              </button>
-              
-          </form>
+                <label class="toggle">
+                  <input type="checkbox" id="toggle" />
+                  <span class="slider"></span>
+                </label>
+                <p>Não repetir número</p>
+              </div>
+              <div class="gradient-wrapper">
+                <button class="btn">
+                  Sortear <img src="assets/arrow.svg" />
+                </button>
+              </div>
+            </form>
 
             <div class="questions active">
               <img src="assets/questions.svg" />
@@ -116,6 +115,26 @@
                   intervalo dos números sorteados.
                 </p>
               </div>
+            </div>
+          </section>
+          <section class="results disable">
+            <h2>Resultado do sorteio</h2>
+            <p>1º resultado</p>
+
+            <div class="number-results">
+              <div class="number-wrapper">
+                <div class="box">
+                  <span class="number">23</span>
+                </div>
+                <div class="box">
+                  <span class="number">23</span>
+                </div>
+              </div>
+            </div>
+            <div class="gradient-wrapper">
+              <button class="btn">
+                Sortear novamente <img src="assets/refresh.svg" />
+              </button>
             </div>
           </section>
         </div>

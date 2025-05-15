@@ -1,0 +1,80 @@
+.btn {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 8px;
+
+  width: 100%;
+
+  border-radius: 0.5rem;
+  background-color: var(--background-tertiary);
+  font: var(--lb-md);
+  color: var(--content-primary);
+
+
+}
+
+
+.btn:hover img {
+  animation: 3s move backwards ;
+}
+
+@keyframes move {
+  0%{
+    transform: translateX(0px);
+  }
+
+  50%{
+    transform: translateX(15px);
+  }
+
+  100%{
+    transform: translateX(0px);
+  }
+}
+@keyframes rotate {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-wrapper {
+  margin-top: 2.5rem;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  padding: 2px;
+  border-radius: 0.5rem;
+  overflow: hidden; 
+}
+
+.gradient-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  background: linear-gradient(
+    45deg,
+    var(--accent-green) 0%,
+    var(--accent-line) 14.84%,
+    var(--accent-red) 32.15%, 
+    var(--accent-pink) 65.79%,
+    var(--accent-blue) 84.58%
+  );
+  background-size: 400%;
+  background-position: 0% 50%;
+  border-radius: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.gradient-wrapper:hover::before {
+  animation: rotate 4s linear infinite;
+  opacity: 1;
+}

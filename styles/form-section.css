@@ -1,12 +1,6 @@
 .form-section {
   width: 30.125rem;
 
-  form{
-    .btn{
-      margin-top: 2.5rem;
-    }
-  }
-
   & .wrapper {
     display: flex;
     gap: .875rem;
