@@ -111,6 +111,14 @@ input::-webkit-inner-spin-button {
 }
 
 @media(width <= 80em){
+    .active{
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: start;
+
+    text-align: start;
+    gap: .5rem;
+  }
 
   .bg{
     height: auto;

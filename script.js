@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const formSection = document.querySelector(".form-section");
   const resultSection = document.querySelector(".results");
   const btnSortAgain = document.querySelectorAll(".gradient-wrapper .btn")[1];
+  const qtdResult = document.getElementById("qtd-result");
 
   // Cria um box com o número
   const createBox = (number) => {
@@ -27,7 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (noRepeat) {
       const range = max - min + 1;
       if (quantity > range) {
-        throw new Error("Quantidade maior que o intervalo disponível sem repetição.");
+        throw new Error(
+          "Quantidade maior que o intervalo disponível sem repetição."
+        );
       }
 
       const numbers = Array.from({ length: range }, (_, i) => i + min);
@@ -46,10 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Limpa os resultados exibidos
-  const clearResults = () => {
-    numberWrapper.innerHTML = "";
-  };
+
+
+ 
 
   // Exibe os números gerados na tela com animação
   const displayResults = (numbers) => {
@@ -64,14 +66,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Validação dos inputs
   const validateInputs = (quantity, min, max, noRepeat) => {
     if (
-      isNaN(quantity) || isNaN(min) || isNaN(max) ||
-      quantity <= 0 || min > max ||
+      isNaN(quantity) ||
+      isNaN(min) ||
+      isNaN(max) ||
+      quantity <= 0 ||
+      min > max ||
       (noRepeat && quantity > max - min + 1)
     ) {
       return false;
     }
     return true;
   };
+
+   let totalDraw = 0;
 
   // Evento submit do formulário
   form.addEventListener("submit", (e) => {
@@ -90,6 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const numbers = generateRandomNumbers(quantity, min, max, noRepeat);
       displayResults(numbers);
+      totalDraw++;
+      qtdResult.textContent = `${totalSorteios}º sorteio`;
 
       formSection.classList.add("disable");
       resultSection.classList.remove("disable");
