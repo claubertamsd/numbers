@@ -34,7 +34,7 @@
   position: absolute;
   background-color: var(--background-brand);
   border-radius: 10px;
-  animation: boxAnim ease-in-out 2s both;
+  animation: boxAnim ease-in-out 3s both;
   z-index: 1;
 }
 
@@ -46,7 +46,7 @@
   transform: rotate(0deg);
   z-index: 2;
   
-  animation: numberColorAnim 2.2s both;
+  animation: numberColorAnim 3.2s both;
 }
 @keyframes boxAnim {
   0% {

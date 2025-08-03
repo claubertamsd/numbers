@@ -60,7 +60,7 @@ const displayResults = (numbers) => {
   numbers.forEach((num, index) => {
     const box = createBox(num);
 
-    const delay = index * 2; 
+    const delay = index * 3; 
 
     const spinner = box.querySelector('.spinner-box');
     const number = box.querySelector('.number');
