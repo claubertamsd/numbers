@@ -16,11 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const box = document.createElement("div");
     box.classList.add("box");
 
+    const spinner = document.createElement("div")
+    spinner.classList.add("spinner-box")
+
     const span = document.createElement("span");
     span.classList.add("number");
     span.textContent = number;
 
-    box.appendChild(span);
+    box.append(span, spinner);
     return box;
   };
 
@@ -52,16 +55,24 @@ document.addEventListener("DOMContentLoaded", () => {
     numberWrapper.innerHTML = "";
   };
 
-  // Exibe os números gerados na tela com animação
-  const displayResults = (numbers) => {
-    clearResults();
-    numbers.forEach((num, index) => {
-      const box = createBox(num);
-      box.style.animationDelay = `${index * 1.3}s`;
-      numberWrapper.appendChild(box);
-    });
-  };
+const displayResults = (numbers) => {
+  clearResults();
+  numbers.forEach((num, index) => {
+    const box = createBox(num);
 
+    const delay = index * 2; 
+
+    const spinner = box.querySelector('.spinner-box');
+    const number = box.querySelector('.number');
+
+    if(spinner) spinner.style.animationDelay = `${delay}s`;
+    if(number) number.style.animationDelay = `${delay}s`;
+
+    box.style.animationDelay = `${delay}s`;
+
+    numberWrapper.appendChild(box);
+  });
+};
   // Validação dos inputs
   const validateInputs = (quantity, min, max, noRepeat) => {
     if (
